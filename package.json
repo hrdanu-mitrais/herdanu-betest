@@ -1,10 +1,12 @@
 {
   "name": "ms-herdanu-betest",
-  "version": "0.0.0",
-  "private": true,
+  "version": "1.0.0",
+  "main": "./bin/www",
+  "description": "microservices betest",
   "scripts": {
-    "start:prod": "node ./bin/www",
     "start:dev": "set DEBUG=* & nodemon ./bin/www",
+    "start:prod": "node ./bin/www",
+    "start": "node ./bin/www",
     "test": "mocha --timeout 5000 --recursive --exit",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
