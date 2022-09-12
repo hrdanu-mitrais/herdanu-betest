@@ -1,0 +1,47 @@
+{
+  "name": "ms-herdanu-betest",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start:prod": "node ./bin/www",
+    "start:dev": "set DEBUG=* & nodemon ./bin/www",
+    "test": "mocha --timeout 5000 --recursive --exit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --single-quote --check .",
+    "format:fix": "prettier ."
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.2",
+    "express": "~4.16.1",
+    "ioredis": "^5.2.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "4.9",
+    "mongoose": "^6.6.0",
+    "morgan": "~1.9.1",
+    "winston": "^3.8.2"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "eslint": "^8.23.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "mocha": "^10.0.0",
+    "nodemon": "^2.0.19",
+    "prettier": "^2.7.1",
+    "sinon": "^14.0.0",
+    "supertest": "^6.2.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --single-quote --write",
+      "eslint --fix"
+    ]
+  }
+}
